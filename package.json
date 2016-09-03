@@ -5,6 +5,9 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
+  "rnpm": {
+    "assets": ["./assets/fonts"]
+  },
   "dependencies": {
     "firebase": "^3.3.0",
     "react": "15.3.1",
