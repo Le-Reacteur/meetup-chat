@@ -39,13 +39,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   welcome: {
-    fontFamily: 'Lato-Semibold',
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
   },
   instructions: {
-    fontFamily: 'Lato-Semibold',
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
