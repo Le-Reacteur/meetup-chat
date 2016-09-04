@@ -9,6 +9,9 @@ import {
 
 import { Bubble, Send } from 'react-native-gifted-chat';
 
+const mainColor = '#7768B8';
+const darkColor = '#534395';
+
 const screen = {
   flex: 1,
   paddingTop: Platform.OS === 'ios' ? 64 : 54,
@@ -17,12 +20,12 @@ const screen = {
 export default {
   homeContainer: {
     ...screen,
-    backgroundColor: '#019DE6',
+    backgroundColor: mainColor,
     paddingTop: Platform.OS === 'ios' ? 22 : 0,
   },
   channelsContainer: {
     ...screen,
-    backgroundColor: '#50364D',
+    backgroundColor: mainColor,
   },
   chatContainer: {
     ...screen,
@@ -30,18 +33,15 @@ export default {
   },
   navigationBar: {
     navigationBarStyle: {
-      backgroundColor: '#422E41',
+      backgroundColor: darkColor,
       borderBottomWidth: 0,
     },
     titleStyle: {
-      color: '#826F81',
+      color: '#FFFFFF',
       fontSize: 13,
       fontWeight: '600',
       fontFamily: 'Lato-Semibold',
-      marginTop: Platform.select({
-        ios: 12,
-        android: 14,
-      }),
+      lineHeight: 18,
     },
   },
   textInput: {
@@ -56,7 +56,7 @@ export default {
       marginRight: 15,
       fontFamily: 'Lato-Semibold',
     },
-    placeholderTextColor: '#71CBF9',
+    placeholderTextColor: '#A89ED1',
     clearButtonMode: 'while-editing',
     underlineColorAndroid: 'transparent',
   },
@@ -91,8 +91,8 @@ export default {
             {...props}
             wrapperStyle={{
               right: {
-                backgroundColor: '#50364D'
-              }
+                backgroundColor: mainColor,
+              },
             }}
           />
         </View>
@@ -101,7 +101,7 @@ export default {
     renderAvatar(props) {
       return (
         <Image
-          source={{uri: `https://firebasestorage.googleapis.com/v0/b/slackrn-8aa2a.appspot.com/o/${props.currentMessage.user.avatar.replace('/', '%2F')}?alt=media`}}
+          source={{uri: `https://firebasestorage.googleapis.com/v0/b/meetupchat-dbce1.appspot.com/o/${props.currentMessage.user.avatar.replace('/', '%2F')}?alt=media`}}
           style={{
             height: 36,
             width: 36,
@@ -126,7 +126,7 @@ export default {
         <Send
           {...props}
           textStyle={{
-            color: '#50364D',
+            color: darkColor,
           }}
         />
       );

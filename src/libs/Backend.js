@@ -12,10 +12,10 @@ class Backend {
   }
   init() {
     firebase.initializeApp({
-      apiKey: 'AIzaSyBgsuwd_NGUlrYvE1zkJEdQeWCgtIb6paE',
-      authDomain: 'slackrn-8aa2a.firebaseapp.com',
-      databaseURL: 'https://slackrn-8aa2a.firebaseio.com',
-      storageBucket: 'slackrn-8aa2a.appspot.com',
+      apiKey: 'AIzaSyAiuvZgc9iLMezprc5zYLBw9PsrgRkXjrE',
+      authDomain: 'meetupchat-dbce1.firebaseapp.com',
+      databaseURL: 'https://meetupchat-dbce1.firebaseio.com',
+      storageBucket: 'meetupchat-dbce1.appspot.com',
     });
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
@@ -52,6 +52,11 @@ class Backend {
         user: messages[i].user,
         createdAt: firebase.database.ServerValue.TIMESTAMP,
       });
+    }
+  }
+  closeChat() {
+    if (this.messagesRef) {
+      this.messagesRef.off();
     }
   }
 }

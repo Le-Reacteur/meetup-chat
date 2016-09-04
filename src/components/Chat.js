@@ -21,6 +21,9 @@ export default class Chat extends React.Component {
       });
     });
   }
+  componentWillUnmount() {
+    Backend.closeChat();
+  }
   render() {
     return (
       <View style={Layout.chatContainer}>
