@@ -4,11 +4,11 @@ import {
   View
 } from 'react-native';
 
-export default class MeetupChat extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#F5FCFF'}}>
-        <Text style={{fontSize: 20, textAlign: 'center', margin: 10}}>
+      <View style={{flex: 1, justifyContent: 'center'}}>
+        <Text style={{fontSize: 20, textAlign: 'center'}}>
           Welcome to React Native!
         </Text>
       </View>

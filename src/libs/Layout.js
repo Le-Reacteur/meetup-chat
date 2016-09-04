@@ -66,11 +66,6 @@ export default {
     marginLeft: 15,
     fontFamily: 'Lato-Semibold',
   },
-
-
-
-
-
   GiftedChat: {
     renderBubble(props) {
       return (
