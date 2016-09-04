@@ -6,7 +6,6 @@ import {
 
 import Layout from '../libs/Layout';
 import Backend from '../libs/Backend';
-import Store from '../libs/Store';
 import { GiftedChat } from 'react-native-gifted-chat';
 
 export default class Chat extends React.Component {
@@ -31,9 +30,9 @@ export default class Chat extends React.Component {
             Backend.sendMessages(messages);
           }}
           user={{
-            _id: Store.getUid(),
-            name: Store.getName(),
-            avatar: Store.getAvatar(),
+            _id: Backend.getUid(),
+            name: Backend.getName(),
+            avatar: Backend.getAvatar(),
           }}
           {...Layout.GiftedChat}
         />

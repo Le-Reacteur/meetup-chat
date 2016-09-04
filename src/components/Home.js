@@ -3,12 +3,12 @@ import {
   Text,
   TextInput,
   View,
+  TouchableOpacity,
 } from 'react-native';
 
 import Button from 'react-native-button';
 import Layout from '../libs/Layout';
-import Store from '../libs/Store';
-
+import Backend from '../libs/Backend';
 import {Actions} from 'react-native-router-flux';
 
 export default class Home extends React.Component {
@@ -36,20 +36,26 @@ export default class Home extends React.Component {
           placeholder='Developer'
           {...Layout.textInput}
         />
-        <Button
-          style={{
-            color: '#ffffff',
-            textDecorationLine: 'underline',
-            fontSize: 19,
-            marginTop: 10,
-          }}
+        <TouchableOpacity
           onPress={() => {
-            Store.setName(this.state.name);
+            Backend.setName(this.state.name);
             Actions.channels();
           }}
+          style={{
+            marginTop: 10,
+            marginLeft: 15,
+          }}
         >
-          Next
-        </Button>
+          <Text
+            style={{
+              color: '#ffffff',
+              textDecorationLine: 'underline',
+              fontSize: 19,
+            }}
+          >
+            Next
+          </Text>
+        </TouchableOpacity>
       </View>
     );
   }

@@ -1,16 +1,10 @@
 import firebase from 'firebase';
 
 class Backend {
-  store = null;
-  messagesRef = null;
   uid = '';
-  setStore(store) {
-    this.store = store;
-  }
-  getStore() {
-    return this.store;
-  }
-  init() {
+  name = 'Developer';
+  messagesRef = null;
+  constructor() {
     firebase.initializeApp({
       apiKey: 'AIzaSyAiuvZgc9iLMezprc5zYLBw9PsrgRkXjrE',
       authDomain: 'meetupchat-dbce1.firebaseapp.com',
@@ -19,13 +13,32 @@ class Backend {
     });
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        this.getStore().setUid(user.uid);
+        this.setUid(user.uid);
       } else {
         firebase.auth().signInAnonymously().catch((error) => {
           alert(error.message);
         });
       }
     });
+  }
+  setUid(value) {
+    this.uid = value;
+  }
+  getUid() {
+    return this.uid;
+  }
+  setName(value) {
+    this.name = value;
+  }
+  getName() {
+    return this.name;
+  }
+  getAvatar() {
+    let sumChars = 0;
+    for (let i = 0; i < this.uid.length; i++) {
+      sumChars += this.uid.charCodeAt(i);
+    }
+    return `avatars/${(sumChars % 14) + 1}.png`;
   }
   loadMessages(channelName, callback) {
     this.messagesRef = firebase.database().ref('messages_'+channelName);
