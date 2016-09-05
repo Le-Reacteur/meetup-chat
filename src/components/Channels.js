@@ -12,12 +12,17 @@ import Layout from '../libs/Layout';
 export default class Channels extends React.Component {
   renderRow(channelName) {
     return (
-      <TouchableOpacity onPress={() => {
-        Actions.chat({
-          channelName,
-          title: '#'+channelName.toUpperCase(),
-        });
-      }}>
+      <TouchableOpacity
+        onPress={() => {
+          Actions.chat({
+            channelName,
+            title: '#'+channelName.toUpperCase(),
+          });
+        }}
+        style={{
+          marginTop: 15,
+        }}
+      >
         <Text style={Layout.channelName}>
           # {channelName}
         </Text>
