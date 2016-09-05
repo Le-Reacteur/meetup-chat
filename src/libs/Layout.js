@@ -6,42 +6,27 @@ import {
   Text,
   View,
 } from 'react-native';
-
 import { Bubble, Send } from 'react-native-gifted-chat';
 
 const mainColor = '#7768B8';
 const darkColor = '#534395';
-
 const screen = {
   flex: 1,
   paddingTop: Platform.OS === 'ios' ? 64 : 54,
 };
 
 export default {
-  homeContainer: {
-    ...screen,
-    backgroundColor: mainColor,
-    paddingTop: Platform.OS === 'ios' ? 22 : 0,
-  },
-  channelsContainer: {
-    ...screen,
-    backgroundColor: mainColor,
-  },
-  chatContainer: {
-    ...screen,
-    backgroundColor: '#FFFFFF',
-  },
   navigationBar: {
-    navigationBarStyle: {
-      backgroundColor: darkColor,
-      borderBottomWidth: 0,
-    },
     titleStyle: {
       color: '#FFFFFF',
       fontSize: 13,
       fontWeight: '600',
       fontFamily: 'Lato-Semibold',
       lineHeight: 18,
+    },
+    navigationBarStyle: {
+      backgroundColor: darkColor,
+      borderBottomWidth: 0,
     },
   },
   textInput: {
@@ -65,6 +50,19 @@ export default {
     fontSize: 18,
     marginLeft: 15,
     fontFamily: 'Lato-Semibold',
+  },
+  homeContainer: {
+    ...screen,
+    backgroundColor: mainColor,
+    paddingTop: Platform.OS === 'ios' ? 22 : 0,
+  },
+  channelsContainer: {
+    ...screen,
+    backgroundColor: mainColor,
+  },
+  chatContainer: {
+    ...screen,
+    backgroundColor: '#FFFFFF',
   },
   GiftedChat: {
     renderBubble(props) {
