@@ -4,6 +4,7 @@ class Backend {
   uid = '';
   name = 'Developer';
   messagesRef = null;
+  
   constructor() {
     firebase.initializeApp({
       apiKey: 'AIzaSyAiuvZgc9iLMezprc5zYLBw9PsrgRkXjrE',
@@ -21,6 +22,7 @@ class Backend {
       }
     });
   }
+
   loadMessages(channelName, callback) {
     this.messagesRef = firebase.database().ref('messages_'+channelName);
     this.messagesRef.off();
@@ -39,6 +41,7 @@ class Backend {
     };
     this.messagesRef.limitToLast(20).on('child_added', onReceive);
   }
+
   sendMessages(messages) {
     for (let i = 0; i < messages.length; i++) {
       this.messagesRef.push({
@@ -48,6 +51,7 @@ class Backend {
       });
     }
   }
+
   closeChat() {
     if (this.messagesRef) {
       this.messagesRef.off();
