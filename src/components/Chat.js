@@ -33,6 +33,7 @@ export default class Chat extends React.Component {
             name: Backend.getName(),
             avatar: Backend.getAvatar(),
           }}
+          {...Layout.GiftedChat}
         />
       </View>
     );
